@@ -34,6 +34,7 @@ public:
     bool rob10_field=false;
     bool rob11_field=false;
     bool rob12_field=false;
+    bool v=false;
     robot *robot1;
     robot *robot2;
     robot *robot3;

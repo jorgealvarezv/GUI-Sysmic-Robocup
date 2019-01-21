@@ -1,4 +1,4 @@
-﻿#include "field.h"
+#include "field.h"
 #include "ui_field.h"
 #include "robot.h"
 #include "ball.h"
@@ -217,25 +217,10 @@ Field::Field(QWidget *parent) :
      scene->addLine(Line21,mypen);
       scene->addLine(Line22,mypen);
 
-    //QRect rec(122.5,435,125,50);
 
-//    QPainterPath* path = new QPainterPath();
-
-//    path->arcMoveTo(win_adj*245,win_adj*870,win_adj*250,win_adj*200,180);
-//    path->arcTo(win_adj*245,win_adj*870,win_adj*250,win_adj*200,0,180);
-
-//    QPainterPath* path1 = new QPainterPath();
-
-
-//    path1->arcMoveTo(win_adj*245,-win_adj*30,win_adj*250,win_adj*200,0);
-//    path1->arcTo(win_adj*245,-win_adj*30,win_adj*250,win_adj*200,0,-180);
-
-
-//    scene->addPath(*path1, mypen);
-//    scene->addPath(*path, mypen);
 
     robot1=new robot();
-    scene->addItem(robot1);
+    //scene->addItem(robot1);
     robot1->setSpeed(0);
     robot1->setAngle(0);
 
@@ -244,7 +229,7 @@ Field::Field(QWidget *parent) :
 
 
     robot2= new robot();
-    scene->addItem(robot2);
+    //scene->addItem(robot2);
     robot2->setSpeed(0);
     robot2->setAngle(0);
 
@@ -252,70 +237,70 @@ Field::Field(QWidget *parent) :
 
 
     robot3= new robot();
-    scene->addItem(robot3);
+    //scene->addItem(robot3);
     robot3->setSpeed(0);
     robot3->setAngle(0);
 
     robot3->setColor(0);
 
     robot4= new robot();
-    scene->addItem(robot4);
+    //scene->addItem(robot4);
     robot4->setSpeed(0);
     robot4->setAngle(0);
 
     robot4->setColor(0);
 
     robot5= new robot();
-    scene->addItem(robot5);
+    //scene->addItem(robot5);
     robot5->setSpeed(0);
     robot5->setAngle(0);
 
     robot5->setColor(0);
 
     robot6= new robot();
-    scene->addItem(robot6);
+    //scene->addItem(robot6);
     robot6->setSpeed(0);
     robot6->setAngle(0);
 
     robot6->setColor(0);
 
     robot7= new robot();
-    scene->addItem(robot7);
+    //scene->addItem(robot7);
     robot7->setSpeed(0);
     robot7->setAngle(180);
 
     robot7->setColor(1);
 
     robot8= new robot();
-    scene->addItem(robot8);
+    //scene->addItem(robot8);
     robot8->setSpeed(0);
     robot8->setAngle(180);
 
     robot8->setColor(1);
 
     robot9= new robot();
-    scene->addItem(robot9);
+    //scene->addItem(robot9);
     robot9->setSpeed(0);
 
     robot9->setAngle(180);
     robot9->setColor(1);
 
     robot10= new robot();
-    scene->addItem(robot10);
+    //scene->addItem(robot10);
     robot10->setSpeed(0);
     robot10->setAngle(180);
 
     robot10->setColor(1);
 
     robot11= new robot();
-    scene->addItem(robot11);
+    //scene->addItem(robot11);
     robot11->setSpeed(0);
     robot11->setAngle(180);
 
     robot11->setColor(1);
 
     robot12= new robot();
-    scene->addItem(robot12);
+    //scene->addItem(robot12);
 
     robot12->setAngle(180);
 
@@ -390,36 +375,284 @@ void Field::updateWin()
                    if(balls_n==0 && ball_field){
                        scene->removeItem(ball);
                        ball_field=false;
-
-
                    }
                    if(balls_n>0 && ball_field==false){
                        scene->addItem(ball);
                        ball_field=true;
 
                    }
-//                   if(robots_blue_n==0 ){
-//                       if(rob1_field){
-//                           scene->removeItem(robot1);
-//                           rob1_field=false;
-//                       }
-//                       if(rob2_field){
-//                           scene->removeItem(robot2);
-//                           rob2_field=false;
-//                       }
+                   if(robots_blue_n==0 ){
+                       if(rob1_field){
+                           scene->removeItem(robot1);
+                           rob1_field=false;
+                       }
+                       if(rob2_field){
+                           scene->removeItem(robot2);
+                           rob2_field=false;
+                       }
+                       if(rob3_field){
+                           scene->removeItem(robot3);
+                           rob3_field=false;
+                       }
+                       if(rob4_field){
+                           scene->removeItem(robot4);
+                           rob4_field=false;
+                       }
+                       if(rob5_field){
+                           scene->removeItem(robot5);
+                           rob1_field=false;
+                       }
+                       if(rob6_field){
+                           scene->removeItem(robot6);
+                           rob6_field=false;
+                       }
 
-//                   }
-//                   if(robots_yellow_n==0 ){
-//                       if(rob7_field){
-//                           scene->removeItem(robot7);
-//                           rob7_field=false;
-//                       }
-//                       if(rob8_field){
-//                           scene->removeItem(robot8);
-//                           rob7_field=false;
-//                       }
+                   }
+                   if(robots_yellow_n==0 ){
+                       if(rob7_field){
+                           scene->removeItem(robot7);
+                           rob7_field=false;
+                       }
+                       if(rob8_field){
+                           scene->removeItem(robot8);
+                           rob8_field=false;
+                       }
+                       if(rob9_field){
+                           scene->removeItem(robot9);
+                           rob9_field=false;
+                       }
+                       if(rob10_field){
+                           scene->removeItem(robot10);
+                           rob10_field=false;
+                       }
+                       if(rob11_field){
+                           scene->removeItem(robot11);
+                           rob11_field=false;
+                       }
+                       if(rob12_field){
+                           scene->removeItem(robot12);
+                           rob12_field=false;
+                       }
 
-//                   }
+                   }
+                   for (int i=0;i<robots_blue_n;i++) {
+                       SSL_DetectionRobot rob = detection.robots_blue(i);
+                       if(rob.robot_id()==0 && rob1_field==false)
+                       {
+                           scene->addItem(robot1);
+                           rob1_field=true;
+                           break;
+                       }
+                       else {
+                           if(rob1_field){
+                               scene->removeItem(robot1);
+                               rob1_field=false;
+                           }
+
+
+                       }
+
+                   }
+                   for (int i=0;i<robots_blue_n;i++) {
+                       SSL_DetectionRobot rob = detection.robots_blue(i);
+                       if(rob.robot_id()==1 && rob2_field==false)
+                       {
+                           scene->addItem(robot2);
+                           rob2_field=true;
+                           break;
+                       }
+                       else {
+                           if(rob2_field){
+                               scene->removeItem(robot2);
+                               rob2_field=false;
+                           }
+
+
+                       }
+
+                   }
+                   for (int i=0;i<robots_blue_n;i++) {
+                       SSL_DetectionRobot rob = detection.robots_blue(i);
+                       if(rob.robot_id()==2 && rob3_field==false)
+                       {
+                           scene->addItem(robot3);
+                           rob3_field=true;
+                           break;
+                       }
+                       else {
+                           if(rob3_field){
+                               scene->removeItem(robot3);
+                               rob3_field=false;
+                           }
+
+
+                       }
+
+                   }
+                   for (int i=0;i<robots_blue_n;i++) {
+                       SSL_DetectionRobot rob = detection.robots_blue(i);
+                       if(rob.robot_id()==3 && rob4_field==false)
+                       {
+                           scene->addItem(robot4);
+                           rob4_field=true;
+                           break;
+                       }
+                       else {
+                           if(rob4_field){
+                               scene->removeItem(robot4);
+                               rob4_field=false;
+                           }
+
+
+                       }
+
+                   }
+                   for (int i=0;i<robots_blue_n;i++) {
+                       SSL_DetectionRobot rob = detection.robots_blue(i);
+                       if(rob.robot_id()==4 && rob5_field==false)
+                       {
+                           scene->addItem(robot5);
+                           rob5_field=true;
+                           break;
+                       }
+                       else {
+                           if(rob5_field){
+                               scene->removeItem(robot5);
+                               rob5_field=false;
+                           }
+
+
+                       }
+
+                   }
+                   for (int i=0;i<robots_blue_n;i++) {
+                       SSL_DetectionRobot rob = detection.robots_blue(i);
+                       if(rob.robot_id()==5 && rob6_field==false)
+                       {
+                           scene->addItem(robot6);
+                           rob6_field=true;
+                           break;
+                       }
+                       else {
+                           if(rob6_field){
+                               scene->removeItem(robot6);
+                               rob6_field=false;
+                           }
+
+
+                       }
+
+                   }
+                   for (int i=0;i<robots_yellow_n;i++) {
+                       SSL_DetectionRobot rob = detection.robots_yellow(i);
+                       if(rob.robot_id()==0 && rob7_field==false)
+                       {
+                           scene->addItem(robot7);
+                           rob7_field=true;
+                           break;
+                       }
+                       else {
+                           if(rob7_field){
+                               scene->removeItem(robot7);
+                               rob7_field=false;
+                           }
+
+
+                       }
+
+                   }
+                   for (int i=0;i<robots_yellow_n;i++) {
+                       SSL_DetectionRobot rob = detection.robots_yellow(i);
+                       if(rob.robot_id()==1 && rob8_field==false)
+                       {
+                           scene->addItem(robot8);
+                           rob8_field=true;
+                           break;
+                       }
+                       else {
+                           if(rob8_field){
+                               scene->removeItem(robot8);
+                               rob8_field=false;
+                           }
+
+
+                       }
+
+                   }
+                   for (int i=0;i<robots_yellow_n;i++) {
+                       SSL_DetectionRobot rob = detection.robots_yellow(i);
+                       if(rob.robot_id()==2 && rob9_field==false)
+                       {
+                           scene->addItem(robot9);
+                           rob9_field=true;
+                           break;
+                       }
+                       else {
+                           if(rob9_field){
+                               scene->removeItem(robot9);
+                               rob9_field=false;
+                           }
+
+
+                       }
+
+                   }
+                   for (int i=0;i<robots_yellow_n;i++) {
+                       SSL_DetectionRobot rob = detection.robots_yellow(i);
+                       if(rob.robot_id()==3 && rob10_field==false)
+                       {
+                           scene->addItem(robot10);
+                           rob10_field=true;
+                           break;
+                       }
+                       else {
+                           if(rob10_field){
+                               scene->removeItem(robot10);
+                               rob10_field=false;
+                           }
+
+
+                       }
+
+                   }
+                   for (int i=0;i<robots_yellow_n;i++) {
+                       SSL_DetectionRobot rob = detection.robots_yellow(i);
+                       if(rob.robot_id()==4 && rob11_field==false)
+                       {
+                           scene->addItem(robot11);
+                           rob11_field=true;
+                           break;
+                       }
+                       else {
+                           if(rob11_field){
+                               scene->removeItem(robot11);
+                               rob11_field=false;
+                           }
+
+
+                       }
+
+                   }
+                   for (int i=0;i<robots_yellow_n;i++) {
+                       SSL_DetectionRobot rob = detection.robots_yellow(i);
+                       if(rob.robot_id()==5 && rob12_field==false)
+                       {
+                           scene->addItem(robot12);
+                           rob12_field=true;
+                           break;
+                       }
+                       else {
+                           if(rob12_field){
+                               scene->removeItem(robot12);
+                               rob12_field=false;
+                           }
+
+
+                       }
+
+                   }
+
+
 
 
 
@@ -448,138 +681,41 @@ void Field::updateWin()
                        b=rob.y();
                        a=(a+5200)/10*win_adj;
                        b=(b+3700)/10*win_adj;
-
-
-//                       for (int i;robots_blue_n;i++) {
-//                           if(rob.robot_id()==0 && rob1_field==false)
-//                           {
-//                               scene->addItem(robot1);
-//                               rob1_field=true;
-//                               break;
-
-//                           }
-//                           if(rob1_field) {
-//                               scene->removeItem(robot1);
-//                               rob1_field=false;
-//                           }
-
-//                       }
-//                       for (int i;robots_yellow_n;i++) {
-//                           if(rob.robot_id()==0 && rob7_field==false)
-//                           {
-//                               scene->addItem(robot7);
-//                               rob7_field=true;
-//                               break;
-
-//                           }
-//                           if(rob7_field) {
-//                               scene->removeItem(robot7);
-//                               rob7_field=false;
-//                           }
-
-//                       }
-//                       for (int i;robots_blue_n;i++) {
-//                           if(rob.robot_id()==2 && rob3_field==false)
-//                           {
-//                               scene->addItem(robot3);
-//                               rob3_field=true;
-//                               break;
-//                       for (int i;robots_blue_n;i++) {
-//                           if(rob.robot_id()==0 && rob1_field==false)
-//                           {
-//                               scene->addItem(robot1);
-//                               rob1_field=true;
-//                               break;
-
-//                           }
-//                           if(rob1_field) {
-//                               scene->removeItem(robot1);
-//                               rob1_field=false;
-//                           }
-
-//                       }
-//                       for (int i;robots_yellow_n;i++) {
-//                           if(rob.robot_id()==0 && rob7_field==false)
-//                           {
-//                               scene->addItem(robot7);
-//                               rob7_field=true;
-//                               break;
-
-//                           }
-//                           if(rob7_field) {
-//                               scene->removeItem(robot7);
-//                               rob7_field=false;
-//                           }
-
-//                       }
-//                           }
-//                           if(rob3_field) {
-//                               scene->removeItem(robot3);
-//                               rob3_field=false;
-//                           }
-
-//                       }
-//                       for (int i;robots_blue_n;i++) {
-//                           if(rob.robot_id()==3 && rob4_field==false)
-//                           {
-//                               scene->addItem(robot4);
-//                               rob4_field=true;
-//                               break;
-
-//                           }
-//                           if(rob4_field) {
-//                               scene->removeItem(robot4);
-//                               rob4_field=false;
-//                           }
-
-//                       }
-//                       for (int i;robots_blue_n;i++) {
-//                           if(rob.robot_id()==4 && rob5_field==false)
-//                           {
-//                               scene->addItem(robot5);
-//                               rob5_field=true;
-//                               break;
-
-//                           }
-//                           if(rob5_field) {
-//                               scene->removeItem(robot5);
-//                               rob5_field=false;
-//                           }
-
-//                       }
-//                       for (int i;robots_blue_n;i++) {
-//                           if(rob.robot_id()==5 && rob6_field==false)
-//                           {
-//                               scene->addItem(robot6);
-//                               rob6_field=true;
-//                               break;
-
-//                           }
-//                           if(rob6_field) {
-//                               scene->removeItem(robot6);
-//                               rob6_field=false;
-//                           }
-
-//                       }
-
-
-
-                       if(rob.robot_id()==0)
+                       if(rob.robot_id()==0 && rob1_field==false){
                            robot1->setCoord(b,a);
-                       if(rob.robot_id()==1)
+                           scene->addItem(robot1);
+                           rob1_field=true;
+                       }
+                       if(rob.robot_id()==1  && rob2_field==false){
                            robot2->setCoord(b,a);
-                       if(rob.robot_id()==2)
+                           scene->addItem(robot2);
+                           rob2_field=true;
+                       }
+                       if(rob.robot_id()==2 && rob3_field==false){
                            robot3->setCoord(b,a);
-                       if(rob.robot_id()==3)
+                           scene->addItem(robot3);
+                           rob3_field=true;
+                       }
+                       if(rob.robot_id()==3 && rob4_field==false){
                            robot4->setCoord(b,a);
-                       if(rob.robot_id()==4)
+                           scene->addItem(robot4);
+                           rob4_field=true;
+                       }
+                       if(rob.robot_id()==4 && rob5_field==false){
                            robot5->setCoord(b,a);
-                       if(rob.robot_id()==5)
+                           scene->addItem(robot5);
+                           rob5_field=true;
+                       }
+                       if(rob.robot_id()==5 && rob6_field==false){
                            robot6->setCoord(b,a);
+                           scene->addItem(robot6);
+                           rob6_field=true;
+                       }
                    }
 
                    for (int i = 0; i < robots_yellow_n; i++) {
                        SSL_DetectionRobot rob = detection.robots_yellow(i);
+
                        //printf("-Robot(AZUL) (%2d/%2d): ",i+1, robots_blue_n);
                        //printRobotInfo(robot);
                        qreal a;
@@ -591,18 +727,37 @@ void Field::updateWin()
                        b=(b+3700)/10*win_adj;
 
 
-                       if(rob.robot_id()==0)
+                       if(rob.robot_id()==0 && rob7_field==false){
                            robot7->setCoord(b,a);
-                       if(rob.robot_id()==1)
+                           scene->addItem(robot7);
+                           rob7_field=true;
+                       }
+                       if(rob.robot_id()==1  && rob8_field==false){
                            robot8->setCoord(b,a);
-                       if(rob.robot_id()==2)
+                           scene->addItem(robot8);
+                           rob8_field=true;
+                       }
+                       if(rob.robot_id()==2 && rob9_field==false){
                            robot9->setCoord(b,a);
-                       if(rob.robot_id()==3)
+                           scene->addItem(robot9);
+                           rob9_field=true;
+                       }
+                       if(rob.robot_id()==3 && rob10_field==false){
                            robot10->setCoord(b,a);
-                       if(rob.robot_id()==4)
+                           scene->addItem(robot10);
+                           rob10_field=true;
+                       }
+                       if(rob.robot_id()==4 && rob11_field==false){
                            robot11->setCoord(b,a);
-                       if(rob.robot_id()==5)
+                           scene->addItem(robot11);
+                           rob11_field=true;
+                       }
+                       if(rob.robot_id()==5 && rob12_field==false){
                            robot12->setCoord(b,a);
+                           scene->addItem(robot12);
+                           rob12_field=true;
+                       }
+
 
 
 
@@ -624,10 +779,6 @@ void Field::on_pushButton_clicked()
 {
     GrSim_Client send;
     send.sendCommand(1,0,0,false,2,0,0,1);
-    //robot1->setSpeed(4);
-    //robot2->setSpeed(4);
-    //robot8->setAngle(180);
-    //robot8->setSpeed(4);
 
 
 
