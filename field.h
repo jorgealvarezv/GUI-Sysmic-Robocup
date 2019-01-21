@@ -21,6 +21,19 @@ class Field : public QWidget
 public:
     explicit Field(QWidget *parent);
     ~Field();
+    bool ball_field=false;
+    bool rob1_field=false;
+    bool rob2_field=false;
+    bool rob3_field=false;
+    bool rob4_field=false;
+    bool rob5_field=false;
+    bool rob6_field=false;
+    bool rob7_field=false;
+    bool rob8_field=false;
+    bool rob9_field=false;
+    bool rob10_field=false;
+    bool rob11_field=false;
+    bool rob12_field=false;
     robot *robot1;
     robot *robot2;
     robot *robot3;
@@ -48,6 +61,7 @@ private slots:
 
     void on_pushButton_3_clicked();
     void keyPressEvent(QKeyEvent *event);
+    void keyReleaseEvent(QKeyEvent *event);
 
 private:
 

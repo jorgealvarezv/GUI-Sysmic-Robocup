@@ -23,7 +23,9 @@ void robot::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWi
     else {
         painter->setBrush(y);
     }
+
     painter->drawEllipse(rob);
+
 
 
 }

@@ -21,7 +21,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>Icons/Sysmic_Icon.png</normaloff>Icons/Sysmic_Icon.png</iconset>
+    <normaloff>../../Downloads/search.png</normaloff>../../Downloads/search.png</iconset>
   </property>
   <widget class="QWidget" name="centralWidget"/>
   <widget class="QMenuBar" name="menuBar">

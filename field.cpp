@@ -1,4 +1,4 @@
-#include "field.h"
+﻿#include "field.h"
 #include "ui_field.h"
 #include "robot.h"
 #include "ball.h"
@@ -316,7 +316,7 @@ Field::Field(QWidget *parent) :
 
     robot12= new robot();
     scene->addItem(robot12);
-    //robot12->setSpeed(0);
+
     robot12->setAngle(180);
 
     robot12->setColor(1);
@@ -326,7 +326,25 @@ Field::Field(QWidget *parent) :
         array[var].setSpeed(6);
     }*/
     ball = new Ball();
-    scene->addItem(ball);
+
+    robot1->setCoord(10000,10000);
+    robot2->setCoord(10000,10000);
+    robot3->setCoord(10000,10000);
+    robot4->setCoord(10000,10000);
+    robot5->setCoord(10000,10000);
+    robot6->setCoord(10000,10000);
+    robot7->setCoord(10000,10000);
+    robot8->setCoord(10000,10000);
+    robot9->setCoord(10000,10000);
+    robot10->setCoord(10000,10000);
+    robot11->setCoord(10000,10000);
+    robot12->setCoord(10000,10000);
+    //scene->addItem(ball);
+
+
+
+
+
 
 
 
@@ -356,7 +374,10 @@ void Field::updateWin()
     int r=0;
     qreal a;
     qreal b;
-    while(r<8)
+
+
+
+    while(r<5)
     {
         if (client.receive(packet))
            {
@@ -366,13 +387,52 @@ void Field::updateWin()
                    int balls_n = detection.balls_size();
                    int robots_blue_n =  detection.robots_blue_size();
                    int robots_yellow_n =  detection.robots_yellow_size();
+                   if(balls_n==0 && ball_field){
+                       scene->removeItem(ball);
+                       ball_field=false;
+
+
+                   }
+                   if(balls_n>0 && ball_field==false){
+                       scene->addItem(ball);
+                       ball_field=true;
+
+                   }
+//                   if(robots_blue_n==0 ){
+//                       if(rob1_field){
+//                           scene->removeItem(robot1);
+//                           rob1_field=false;
+//                       }
+//                       if(rob2_field){
+//                           scene->removeItem(robot2);
+//                           rob2_field=false;
+//                       }
+
+//                   }
+//                   if(robots_yellow_n==0 ){
+//                       if(rob7_field){
+//                           scene->removeItem(robot7);
+//                           rob7_field=false;
+//                       }
+//                       if(rob8_field){
+//                           scene->removeItem(robot8);
+//                           rob7_field=false;
+//                       }
+
+//                   }
+
+
+
+
                    for (int i = 0; i < balls_n; i++) {
                        SSL_DetectionBall balls = detection.balls(i);
                        a=balls.x()-0.03;
                        b=balls.y();
+
                        a=(a+5200)/10*win_adj;
                        b=(b+3700)/10*win_adj;
                        ball->setCoord(b,a);
+
 
                    }
 
@@ -381,12 +441,127 @@ void Field::updateWin()
                        SSL_DetectionRobot rob = detection.robots_blue(i);
                        //printf("-Robot(AZUL) (%2d/%2d): ",i+1, robots_blue_n);
                        //printRobotInfo(robot);
+                       //printf("%i\n",rob.robot_id());
 
 
                        a=rob.x()-0.03;
                        b=rob.y();
                        a=(a+5200)/10*win_adj;
                        b=(b+3700)/10*win_adj;
+
+
+//                       for (int i;robots_blue_n;i++) {
+//                           if(rob.robot_id()==0 && rob1_field==false)
+//                           {
+//                               scene->addItem(robot1);
+//                               rob1_field=true;
+//                               break;
+
+//                           }
+//                           if(rob1_field) {
+//                               scene->removeItem(robot1);
+//                               rob1_field=false;
+//                           }
+
+//                       }
+//                       for (int i;robots_yellow_n;i++) {
+//                           if(rob.robot_id()==0 && rob7_field==false)
+//                           {
+//                               scene->addItem(robot7);
+//                               rob7_field=true;
+//                               break;
+
+//                           }
+//                           if(rob7_field) {
+//                               scene->removeItem(robot7);
+//                               rob7_field=false;
+//                           }
+
+//                       }
+//                       for (int i;robots_blue_n;i++) {
+//                           if(rob.robot_id()==2 && rob3_field==false)
+//                           {
+//                               scene->addItem(robot3);
+//                               rob3_field=true;
+//                               break;
+//                       for (int i;robots_blue_n;i++) {
+//                           if(rob.robot_id()==0 && rob1_field==false)
+//                           {
+//                               scene->addItem(robot1);
+//                               rob1_field=true;
+//                               break;
+
+//                           }
+//                           if(rob1_field) {
+//                               scene->removeItem(robot1);
+//                               rob1_field=false;
+//                           }
+
+//                       }
+//                       for (int i;robots_yellow_n;i++) {
+//                           if(rob.robot_id()==0 && rob7_field==false)
+//                           {
+//                               scene->addItem(robot7);
+//                               rob7_field=true;
+//                               break;
+
+//                           }
+//                           if(rob7_field) {
+//                               scene->removeItem(robot7);
+//                               rob7_field=false;
+//                           }
+
+//                       }
+//                           }
+//                           if(rob3_field) {
+//                               scene->removeItem(robot3);
+//                               rob3_field=false;
+//                           }
+
+//                       }
+//                       for (int i;robots_blue_n;i++) {
+//                           if(rob.robot_id()==3 && rob4_field==false)
+//                           {
+//                               scene->addItem(robot4);
+//                               rob4_field=true;
+//                               break;
+
+//                           }
+//                           if(rob4_field) {
+//                               scene->removeItem(robot4);
+//                               rob4_field=false;
+//                           }
+
+//                       }
+//                       for (int i;robots_blue_n;i++) {
+//                           if(rob.robot_id()==4 && rob5_field==false)
+//                           {
+//                               scene->addItem(robot5);
+//                               rob5_field=true;
+//                               break;
+
+//                           }
+//                           if(rob5_field) {
+//                               scene->removeItem(robot5);
+//                               rob5_field=false;
+//                           }
+
+//                       }
+//                       for (int i;robots_blue_n;i++) {
+//                           if(rob.robot_id()==5 && rob6_field==false)
+//                           {
+//                               scene->addItem(robot6);
+//                               rob6_field=true;
+//                               break;
+
+//                           }
+//                           if(rob6_field) {
+//                               scene->removeItem(robot6);
+//                               rob6_field=false;
+//                           }
+
+//                       }
+
 
 
                        if(rob.robot_id()==0)
@@ -448,7 +623,7 @@ void Field::updateWin()
 void Field::on_pushButton_clicked()
 {
     GrSim_Client send;
-    send.sendCommand(1,0,0,false,2,0,0);
+    send.sendCommand(1,0,0,false,2,0,0,1);
     //robot1->setSpeed(4);
     //robot2->setSpeed(4);
     //robot8->setAngle(180);
@@ -463,7 +638,7 @@ void Field::on_pushButton_clicked()
 void Field::on_pushButton_2_clicked()
 {
     GrSim_Client send;
-    send.sendCommand(0,0,0,false,2,0,0);
+    send.sendCommand(0,0,0,false,2,0,0,1);
     //robot1->setSpeed(0);
     //robot2->setSpeed(0);
     //robot8->setSpeed(0);
@@ -479,33 +654,76 @@ void Field::on_pushButton_3_clicked()
     //robot2->setAngle(270);
     //robot8->setAngle(90);
     GrSim_Client send;
-    send.sendCommand(1,0,0,false,2,3,3);
+    send.sendCommand(1,0,0,false,2,3,3,1);
 
 }
 
 void Field::keyPressEvent(QKeyEvent *event)
 {
+    int v=2;
+    int id=0;
+    bool yellow=false;
+
     GrSim_Client send;
     switch (event->key()) {
+
     case Qt::Key_W:
-        send.sendCommand(1,0,0,false,2,0,0);
+
+        send.sendCommand(v,0,0,yellow,id,0,0,1);
         break;
     case Qt::Key_S:
-        send.sendCommand(-1,0,0,false,2,0,0);
+        send.sendCommand(-v,0,0,yellow,id,0,0,1);
         break;
     case Qt::Key_D:
-        send.sendCommand(0,-1,0,false,2,0,0);
+        send.sendCommand(0,0,25,yellow,id,0,0,-1);
         break;
     case Qt::Key_A:
-        send.sendCommand(0,1,0,false,2,0,0);
+        send.sendCommand(0,0,-5,yellow,id,0,0,1);
         break;
     case Qt::Key_Space:
-        send.sendCommand(0,0,0,false,2,2,2);
+
+        send.sendCommand(0,0,0,yellow,id,4,4,1);
         break;
 
     default:
+
         break;
     }
+
+}
+
+void Field::keyReleaseEvent(QKeyEvent *event)
+{
+
+    int id=0;
+    bool yellow=false;
+
+    GrSim_Client send;
+    switch (event->key()) {
+
+    case Qt::Key_W:
+
+        send.sendCommand(0,0,0,yellow,id,0,0,1);
+        break;
+    case Qt::Key_S:
+        send.sendCommand(0,0,0,yellow,id,0,0,1);
+        break;
+    case Qt::Key_D:
+        send.sendCommand(0,0,0,yellow,id,0,0,-1);
+        break;
+    case Qt::Key_A:
+        send.sendCommand(0,0,0,yellow,id,0,0,1);
+        break;
+    case Qt::Key_Space:
+
+        send.sendCommand(0,0,0,yellow,id,4,4,1);
+        break;
+
+    default:
+
+        break;
+    }
+
 
 }
 

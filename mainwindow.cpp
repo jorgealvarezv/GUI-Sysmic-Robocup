@@ -16,6 +16,7 @@ MainWindow::MainWindow(QWidget *parent) :
     Field *field=new Field(this);
     setCentralWidget(field);
 
+
     Field(this);
 
 

@@ -17,7 +17,7 @@ GrSim_Client::GrSim_Client(QObject *parent) :
     connect(socket, SIGNAL(readyRead()), this, SLOT(readyRead()));
 }
 
-void GrSim_Client::sendCommand(double velX,double velY,bool velT,bool yellow, int id,int kickx, int kicky){
+void GrSim_Client::sendCommand(double velX,double velY,bool velT,bool yellow, int id,int kickx, int kicky,int spin){
     float zero = 0.0;
     grSim_Packet packet;
     packet.mutable_commands()->set_isteamyellow(yellow);
@@ -26,13 +26,13 @@ void GrSim_Client::sendCommand(double velX,double velY,bool velT,bool yellow, in
     command->set_id(id);
 
     command->set_wheelsspeed(!true);
-    command->set_wheel1(5);
-    command->set_wheel2(5);
-    command->set_wheel3(5);
-    command->set_wheel4(5);
+    command->set_wheel1(-5);
+    command->set_wheel2(-5);
+    command->set_wheel3(-5);
+    command->set_wheel4(-5);
     command->set_veltangent(velX);
     command->set_velnormal(velY);
-    command->set_velangular(velT);
+    command->set_velangular(5*spin*velT);
 
     command->set_kickspeedx(kickx);
     command->set_kickspeedz(kicky);
