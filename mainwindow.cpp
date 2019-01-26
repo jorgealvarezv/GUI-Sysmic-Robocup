@@ -3,6 +3,7 @@
 #include "robot.h"
 #include"field.h"
 #include<QLayout>
+#include "net/robocup_ssl_client.h"
 
 #include <QWidget>
 
@@ -37,5 +38,17 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_action_Start_triggered()
 {
+
+}
+
+void MainWindow::on_actionUse_camera_triggered(bool checked)
+{
+    if(checked)
+    {
+        port_r=10020;
+    }
+    else {
+        port_r=10020;
+    }
 
 }

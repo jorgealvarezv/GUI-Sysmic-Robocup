@@ -51,8 +51,11 @@
    </widget>
    <widget class="QMenu" name="menujfdhs">
     <property name="title">
-     <string>&amp;Camera</string>
+     <string>Visialization</string>
     </property>
+    <addaction name="actionUse_camera"/>
+    <addaction name="separator"/>
+    <addaction name="actionUse_Grsim"/>
    </widget>
    <widget class="QMenu" name="menu_Help">
     <property name="title">
@@ -83,6 +86,25 @@
   <action name="action_Start">
    <property name="text">
     <string>&amp;Start</string>
+   </property>
+  </action>
+  <action name="actionUse_camera">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Use camera</string>
+   </property>
+   <property name="shortcut">
+    <string>F5</string>
+   </property>
+  </action>
+  <action name="actionUse_Grsim">
+   <property name="text">
+    <string>Use Grsim</string>
+   </property>
+   <property name="shortcut">
+    <string>F6</string>
    </property>
   </action>
  </widget>

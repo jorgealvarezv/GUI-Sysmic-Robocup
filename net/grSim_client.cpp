@@ -32,11 +32,12 @@ void GrSim_Client::sendCommand(double velX,double velY,bool velT,bool yellow, in
     command->set_wheel4(-5);
     command->set_veltangent(velX);
     command->set_velnormal(velY);
-    command->set_velangular(5*spin*velT);
+    command->set_velangular(10*spin*velT);
 
     command->set_kickspeedx(kickx);
     command->set_kickspeedz(kicky);
     command->set_spinner(false);
+
 
 
     QByteArray dgram;

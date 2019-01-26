@@ -8,7 +8,7 @@
 #include<QGraphicsItem>
 #include"robot.h"
 #include"ball.h"
-
+#include<unistd.h>
 
 namespace Ui {
 class Field;
@@ -52,6 +52,10 @@ public:
     qreal win_adj=0.8;
     Ball  *ball;
     void setScene();
+    bool grsim=true;
+    void rotate_Robot();
+
+
 
 
 private slots:

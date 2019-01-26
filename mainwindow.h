@@ -9,6 +9,8 @@
 #include<QGraphicsScene>
 #include<robot.h>
 
+
+
 namespace Ui {
 class MainWindow;
 }
@@ -18,12 +20,15 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
+    int port_r=10020;
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
 
 private slots:
     void on_action_Start_triggered();
+
+    void on_actionUse_camera_triggered(bool checked);
 
 private:
     Ui::MainWindow *ui;

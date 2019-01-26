@@ -26,6 +26,7 @@
 #include "pb/messages_robocup_ssl_geometry.pb.h"
 #include "pb/messages_robocup_ssl_wrapper.pb.h"
 #include "pb/messages_robocup_ssl_refbox_log.pb.h"
+#include<mainwindow.h>
 using namespace std;
 /**
 	@author Author Name
@@ -40,11 +41,10 @@ protected:
   string _net_address;
   string _net_interface;
 public:
-    RoboCupSSLClient(//int port = 10020,
-                     int port = 10006,
-
+  MainWindow a;
+  int port_r=a.port_r;
+    RoboCupSSLClient(int port=0,
                      string net_ref_address="224.5.23.2",
-
                      string net_ref_interface="");
 
     ~RoboCupSSLClient();

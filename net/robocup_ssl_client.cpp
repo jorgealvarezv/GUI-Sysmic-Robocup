@@ -19,12 +19,13 @@
 */
 //========================================================================
 #include "net/robocup_ssl_client.h"
+#include<mainwindow.h>
 
 RoboCupSSLClient::RoboCupSSLClient(int port,
                      string net_address,
                      string net_interface)
 {
-  _port=port;
+  _port=port_r;
   _net_address=net_address;
   _net_interface=net_interface;
   in_buffer=new char[65536];
