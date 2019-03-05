@@ -41,14 +41,6 @@ void MainWindow::on_action_Start_triggered()
 
 }
 
-void MainWindow::on_actionUse_camera_triggered(bool checked)
-{
-    if(checked)
-    {
-        port_r=10020;
-    }
-    else {
-        port_r=10020;
-    }
 
-}
+
+

@@ -313,7 +313,7 @@ Field::Field(QWidget *parent) :
         array[var].setSpeed(6);
     }*/
     ball = new Ball();
-    rotate_Robot();
+    //rotate_Robot();
 
 
 
@@ -902,15 +902,12 @@ void Field::updateWin()
 
 
 }
-
-void Field::on_pushButton_clicked()
+void Field::on_refForceStart_clicked()
 {
     GrSim_Client send;
     send.sendCommand(1,0,0,false,2,0,0,1);
-
-
-
 }
+
 
 
 
@@ -1006,4 +1003,6 @@ void Field::keyReleaseEvent(QKeyEvent *event)
 
 
 }
+
+
 

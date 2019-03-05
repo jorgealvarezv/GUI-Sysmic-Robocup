@@ -60,13 +60,15 @@ public:
 
 private slots:
     void updateWin();
-    void on_pushButton_clicked();
+    //void on_pushButton_clicked();
 
     void on_pushButton_2_clicked();
 
     void on_pushButton_3_clicked();
     void keyPressEvent(QKeyEvent *event);
     void keyReleaseEvent(QKeyEvent *event);
+
+    void on_refForceStart_clicked();
 
 private:
 

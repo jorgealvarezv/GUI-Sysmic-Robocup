@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1049</width>
-    <height>1022</height>
+    <width>1319</width>
+    <height>1006</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -21,7 +21,10 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../../Downloads/search.png</normaloff>../../Downloads/search.png</iconset>
+    <normaloff>../Icons/SysmicLogo.png</normaloff>../Icons/SysmicLogo.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(211, 215, 207);</string>
   </property>
   <widget class="QWidget" name="centralWidget"/>
   <widget class="QMenuBar" name="menuBar">
@@ -29,7 +32,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1049</width>
+     <width>1319</width>
      <height>22</height>
     </rect>
    </property>
@@ -45,17 +48,26 @@
     </property>
    </widget>
    <widget class="QMenu" name="menuhdjk">
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+      <horstretch>20</horstretch>
+      <verstretch>20</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
     <property name="title">
      <string>&amp;Time</string>
     </property>
    </widget>
    <widget class="QMenu" name="menujfdhs">
     <property name="title">
-     <string>Visialization</string>
+     <string>&amp;Camera</string>
     </property>
-    <addaction name="actionUse_camera"/>
-    <addaction name="separator"/>
-    <addaction name="actionUse_Grsim"/>
    </widget>
    <widget class="QMenu" name="menu_Help">
     <property name="title">
@@ -86,25 +98,6 @@
   <action name="action_Start">
    <property name="text">
     <string>&amp;Start</string>
-   </property>
-  </action>
-  <action name="actionUse_camera">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Use camera</string>
-   </property>
-   <property name="shortcut">
-    <string>F5</string>
-   </property>
-  </action>
-  <action name="actionUse_Grsim">
-   <property name="text">
-    <string>Use Grsim</string>
-   </property>
-   <property name="shortcut">
-    <string>F6</string>
    </property>
   </action>
  </widget>

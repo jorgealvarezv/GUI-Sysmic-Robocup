@@ -28,7 +28,6 @@ public:
 private slots:
     void on_action_Start_triggered();
 
-    void on_actionUse_camera_triggered(bool checked);
 
 private:
     Ui::MainWindow *ui;
