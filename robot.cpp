@@ -3,8 +3,6 @@
 robot::robot()
 {
 
-
-
 }
 
 QRectF robot::boundingRect() const
@@ -62,4 +60,3 @@ void robot::DoCollision()
 {
 
 }
-
