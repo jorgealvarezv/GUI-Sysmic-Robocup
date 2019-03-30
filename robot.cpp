@@ -26,8 +26,6 @@ void robot::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWi
 
     painter->drawEllipse(rob);
 
-
-
 }
 void robot::setSpeed(int speedx){
     speed=speedx;

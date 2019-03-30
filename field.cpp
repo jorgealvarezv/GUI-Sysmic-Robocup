@@ -366,7 +366,7 @@ void Field::updateWin()
 
 
 
-    while(r<5)
+    while(r<4)
     {
         if (client.receive(packet))
            {
@@ -883,25 +883,14 @@ void Field::updateWin()
                                robot12->setCoord(b,a);
 
                            }
-
-
-
-
-
-
-
                        } r++;
-
                    }
-
                 }
-
-
             }
     }
 
-
 }
+
 void Field::on_refForceStart_clicked()
 {
     GrSim_Client send;
@@ -920,9 +909,6 @@ void Field::on_pushButton_2_clicked()
     //robot2->setSpeed(0);
     //robot8->setSpeed(0);
     //ball->setSpeed(2);
-
-
-
 
 }
 

@@ -20,14 +20,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     Field(this);
 
-
-
-
-
-
-
     field->show();
-
 
 }
 

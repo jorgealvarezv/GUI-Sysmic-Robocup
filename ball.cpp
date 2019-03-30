@@ -18,7 +18,6 @@ void Ball::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWid
 
     QRectF fball = boundingRect();
 
-
     painter->setBrush(n);
     painter->setPen(mypen4);
     painter->drawEllipse(fball);
@@ -34,6 +33,7 @@ void Ball::advance(int phase)
 void Ball::setSpeed(int speedx)
 {
     speed=speedx;
+
 }
 
 void Ball::setCoord(qreal posx, qreal posy)
@@ -41,4 +41,5 @@ void Ball::setCoord(qreal posx, qreal posy)
     x=posx;
     y=posy;
     setPos(x,y);
+
 }
